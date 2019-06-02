@@ -12,6 +12,18 @@ using namespace std;
  * the case for the letters (upper or lower) should not
  * affect your result. 
  */
+char *removeSpaces(char *str) 
+{ 
+    int i = 0, j = 0; 
+    while (str[i]) 
+    { 
+        if (str[i] != ' ') 
+           str[j++] = str[i]; 
+        i++; 
+    } 
+    str[j] = '\0'; 
+    return str; 
+} 
 bool isAnagram(string s1, string s2){
     int n1 = s1.length(); 
     int n2 = s2.length(); 
@@ -24,6 +36,10 @@ bool isAnagram(string s1, string s2){
     for (int i = 0; i < n1; i++) {
       s1[i]=tolower(s1[i]);
       s2[i]=tolower(s2[i]);
+    }
+    for (int i = 0; i < n1; i++){
+      removeSpaces(&s1[i]);
+      removeSpaces(&s2[i]);
     }
     for (int i = 0; i < n1; i++) 
         if (s1[i] != s2[i]) 
