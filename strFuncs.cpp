@@ -21,11 +21,9 @@ bool isAnagram(string s1, string s2){
     sort(s1.begin(), s1.end()); 
     sort(s2.begin(), s2.end()); 
   
-  for (int i = 0; i < n1; i++){
-    if (&s1[i] == " "||&s2[i] == " ")
-          continue;
-    if (s1[i] != s2[i]) {
-            return false;}}
+    for (int i = 0; i < n1; i++) 
+        if (s1[i] != s2[i]) 
+            return false;
   return true;
 }
 
@@ -36,10 +34,10 @@ bool isPalindrome(const string s1){
   string s = "";
   string t = "";
   int l = s1.length();
-  for (int i = 0; i<(l/2);i++){
+  for (int i = 0; i<=(l/2);i++){
     s[i] = s1[i];
   }
-  for (int i = 0; i<(l/2);i++){
+  for (int i = 0; i<=(l/2);i++){
     t[l-i] = s1[l-i];
   }
   if (s==t){
