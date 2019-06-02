@@ -53,7 +53,7 @@ bool isAnagram(string s1, string s2){
 bool isPalindrome(const string s1){
   string s = "";
   string t = "";
-  int l = s1.length();
+  int l = s1.length()-1;
   for (int i = 0; i<=(l/2);i++){
     s[i] = s1[i];
   }
