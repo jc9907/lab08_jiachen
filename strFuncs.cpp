@@ -21,6 +21,10 @@ bool isAnagram(string s1, string s2){
     sort(s1.begin(), s1.end()); 
     sort(s2.begin(), s2.end()); 
   
+    for (int i = 0; i < n1; i++) {
+      s1[i]=tolower(s1[i]);
+      s2[i]=tolower(s2[i]);
+    }
     for (int i = 0; i < n1; i++) 
         if (s1[i] != s2[i]) 
             return false;
