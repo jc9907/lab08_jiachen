@@ -1,4 +1,3 @@
-//Diba Mirza
 #ifndef STRFUNCS_H
 #define STRFUNCS_H
 using namespace std;
