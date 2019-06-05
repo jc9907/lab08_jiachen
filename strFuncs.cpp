@@ -12,39 +12,21 @@ using namespace std;
  * the case for the letters (upper or lower) should not
  * affect your result. 
  */
-char *removeSpaces(char *str) 
-{ 
-    int i = 0, j = 0; 
-    while (str[i]) 
-    { 
-        if (str[i] != ' ') 
-           str[j++] = str[i]; 
-        i++; 
-    } 
-    str[j] = '\0'; 
-    return str; 
-} 
 bool isAnagram(string s1, string s2){
     int n1 = s1.length(); 
     int n2 = s2.length(); 
-    if (n1 != n2) 
-        return false; 
-
+    string new_1;
+    string new_2;
     sort(s1.begin(), s1.end()); 
     sort(s2.begin(), s2.end()); 
   
     for (int i = 0; i < n1; i++) {
-      s1[i]=tolower(s1[i]);
-      s2[i]=tolower(s2[i]);
+      new_1.append(tolower(s1[i], 1));
+      sort(new_1.begin(), new_1.end());
+      new_2.append(tolower(s2[i], 1));
+      sort(new_2.begin(), new_2.end());
     }
-    for (int i = 0; i < n1; i++){
-      removeSpaces(&s1[i]);
-      removeSpaces(&s2[i]);
-    }
-    for (int i = 0; i < n1; i++) 
-        if (s1[i] != s2[i]) 
-            return false;
-  return true;
+  return new_1 == new_2;
 }
 
 /* Precondition: s1 is a valid string that may contain upper or lower case alphabets, no spaces or special characters
