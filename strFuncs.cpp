@@ -33,20 +33,13 @@ bool isAnagram(string s1, string s2){
  * Postcondition: Returns true if s1 is a palindrome, false otherwise
  *You should provide a recursive solution*/
 bool isPalindrome(const string s1){
-  string s = "";
-  string t = "";
-  int l = s1.length()-1;
-  for (int i = 0; i<=(l/2);i++){
-    s[i] = s1[i];
-  }
-  for (int i = 0; i<=(l/2);i++){
-    t[l-i] = s1[l-i];
-  }
-  if (s==t){
+  int l = s1.length();
+  if (l == 0 || l ==1)
     return true;
-  }
-  else {
-    return false;}
+  if (tolower(s1[0])==tolower(s1[l-1])
+    return isPalindrome(s1.substr(1,l-2));
+  else 
+    return false;
 }
 
 
